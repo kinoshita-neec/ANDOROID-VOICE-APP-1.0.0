@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+チャットメッセージの背景を定義するドローアブルリソース
+特徴：
+- ユーザーメッセージ（activated=true）: 青みがかった背景色で右下が尖った形状
+- AIメッセージ（activated=false）: グレーの背景色で左下が尖った形状
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_activated="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#E3F2FD" />
+            <corners
+                android:topLeftRadius="16dp"
+                android:topRightRadius="16dp"
+                android:bottomLeftRadius="16dp"
+                android:bottomRightRadius="4dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#E8E8E8" />
+            <corners
+                android:topLeftRadius="16dp"
+                android:topRightRadius="16dp"
+                android:bottomLeftRadius="4dp"
+                android:bottomRightRadius="16dp" />
+        </shape>
+    </item>
+</selector>

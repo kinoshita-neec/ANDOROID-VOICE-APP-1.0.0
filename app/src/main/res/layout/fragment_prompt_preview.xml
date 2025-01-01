@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+このレイアウトファイルはプロンプトプレビュー画面を定義します。
+主な構成要素：
+1. プロンプトのプレビューを表示するTextView
+このレイアウトはPromptPreviewFragmentから参照されます。
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/promptPreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="プロンプトプレビュー"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/promptPreviewContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,101 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+import java.util.Properties
+
+def properties = new Properties()
+def localPropertiesFile = project.rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    properties.load(new FileInputStream(localPropertiesFile))
+}
+
+android {
+    namespace 'com.example.voiceapp'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.voiceapp"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        buildConfigField("String", "OPENAI_API_KEY", "\"${properties.getProperty('OPENAI_API_KEY', '')}\"")
+    }
+    buildFeatures {
+        buildConfig = true
+        viewBinding true
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "OPENAI_API_KEY", "\"${getApiKey()}\""
+        }
+        release {
+            buildConfigField "String", "OPENAI_API_KEY", "\"${getApiKey()}\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    kotlinOptions {
+        jvmTarget = '17'  // 11から17に変更
+        languageVersion = '1.9'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17  // 11から17に変更
+        targetCompatibility JavaVersion.VERSION_17  // 11から17に変更
+    }
+}
+
+def getApiKey() {
+    def properties = new Properties()
+    properties.load(project.rootProject.file("local.properties").newDataInputStream())
+    def apiKey = properties.getProperty("OPENAI_API_KEY")
+    if (apiKey == null || apiKey.isEmpty()) {
+        throw new GradleException("OpenAI API key not found. Please add OPENAI_API_KEY to local.properties")
+    }
+    return apiKey
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
+    implementation 'com.google.android.gms:play-services-base:18.2.0'
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    // または
+    // implementation 'com.google.android.gms:play-services-core:18.2.0'
+
+    // Compose dependencies
+    implementation("androidx.activity:activity-compose:1.8.2")
+    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.material3:material3")
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    debugImplementation("androidx.compose.ui:ui-tooling")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // コルーチン関連の依存関係を追加
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    
+    // OkHttp関連の依存関係を追加
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
+    
+    // JSONパース用の依存関係を追加
+    implementation 'org.json:json:20230618'
+
+    // Room関連の依存関係を削除
+
+    // Gsonの依存関係を追加
+    implementation 'com.google.code.gson:gson:2.10.1'
+}

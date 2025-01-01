@@ -1,0 +1,41 @@
+# Build files
+build/
+*.apk
+*.apks
+*.aab
+*.dex
+*.class
+*.jar
+*.aar
+*.so
+*.hprof
+*.jks
+local.properties
+proguard/
+.gradle/
+*.iml
+*.keystore
+
+# IDE
+.idea/
+*.iws
+*.ipr
+*.bak
+
+# OS
+.DS_Store
+Thumbs.db
+
+# .hprof(JVM)
+*.hprof
+
+# Other
+captures/
+*.log
+*.orig
+*.swp
+*.swo
+*.vmoptions
+*.ap_
+*.externalNativeBuild
+*.externalNativeBuild/

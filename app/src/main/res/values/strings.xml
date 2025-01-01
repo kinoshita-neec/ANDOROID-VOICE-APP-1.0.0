@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+アプリケーションで使用される文字列リソース
+主な構成要素：
+- アプリ名
+- 各種メッセージやプロンプト
+この文字列リソースはアプリケーション全体で使用されます。
+-->
+<resources>
+    <string name="app_name">音声対話アプリ</string>
+    <string name="welcome_message">ようこそ音声対話アプリへ。</string>
+    <string name="prompt_temperature">現在の気温は %1$s°C です。</string>
+    <string name="prompt_humidity">現在の湿度は %1$s%% です。</string>
+    <string name="prompt_light">現在の照度は %1$s ルクスです。</string>
+    <string name="prompt_pressure">現在の気圧は %1$s hPa です。</string>
+    <string name="cold_message">少し寒いですね。</string>
+    <string name="warm_message">今日は暖かいですね。</string>
+    <string name="hot_message">とても暑いですね。</string>
+    <string name="thirsty_message">のどが乾きました。</string>
+    <string name="surprise_message">わあ、びっくりしました。</string>
+    <string name="start_listening">音声認識を開始</string>
+    <string name="stop_listening">音声認識を停止</string>
+    <string name="listening">音声認識中...</string>
+    <string name="please_speak">話してください</string>
+    <string name="status_idle">音声入力待ち</string>
+    <string name="status_listening">音声認識中</string>
+    <string name="status_processing">AI応答待ち</string>
+    <string name="status_speaking">AI応答読み上げ中</string>
+    <string name="status_error">エラーが発生しました</string>
+    <string name="status_waiting">処理待機中</string>
+    <string name="status_waiting_input">音声入力待機中</string>
+    <string name="status_recording">音声入力中</string>
+    <string name="status_converting">音声をテキストに変換中</string>
+    <string name="status_ready_to_ask">AI問い合わせ可能</string>
+    <string name="status_asking_ai">AIに問い合わせ中</string>
+    <string name="status_ai_thinking">AI応答生成中</string>
+    <string name="status_ai_responded">AI応答受信完了</string>
+    <string name="status_speaking_response">応答読み上げ中</string>
+    <string name="status_completed">処理完了</string>
+    <string name="status_error_occurred">エラーが発生しました</string>
+    <string name="status_checking_sensors">センサー情報を確認中...</string>
+    <string name="button_cancel">中断</string>
+    <string name="button_ask_ai">AI問い合わせ</string>
+    <string name="button_check_sensors">センサー問い合わせ</string>
+    <string name="sensor_info_title">センサー情報</string>
+    <string name="no_sensor">センサーが利用できません</string>
+    <string name="conversation_log">会話ログ</string>
+    <string name="no_conversations">会話履歴がありません</string>
+</resources>

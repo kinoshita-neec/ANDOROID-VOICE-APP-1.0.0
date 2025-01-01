@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+音声チャットアプリケーションの構成ファイル
+必要な権限：
+- 音声録音（RECORD_AUDIO）
+- インターネット接続（INTERNET）
+- ネットワーク状態の確認（ACCESS_NETWORK_STATE）
+必須ハードウェア：
+- マイク
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.voiceapp">
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-feature android:name="android.hardware.microphone" android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VoiceApp">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"> <!-- ここに android:exported 属性を追加 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".UserSettingsActivity" android:exported="false"/>
+        <activity android:name=".AgentSettingsActivity" android:exported="false"/>
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"/>
+    </application>
+
+</manifest>

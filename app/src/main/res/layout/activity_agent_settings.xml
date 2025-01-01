@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+このレイアウトファイルはエージェント設定画面を定義します。
+主な構成要素：
+1. エージェントの名前、年齢、性別、性格、話し方の入力フィールド
+2. 応答の長さを設定するスライダー
+3. 設定を保存するボタン
+このレイアウトはAgentSettingsFragmentから参照されます。
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="エージェント設定"
+            android:textSize="24sp"
+            android:layout_marginBottom="16dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/agentNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="エージェント名"
+                android:text="あすか"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/agentAgeInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="年齢"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <AutoCompleteTextView
+                    android:id="@+id/agentGenderInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="性別"
+                    android:inputType="none"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- 性格設定 -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="基本性格">
+            <AutoCompleteTextView
+                android:id="@+id/personalityBaseInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/personalityDetailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="性格の特徴（詳細）"
+                android:minLines="2"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- 話し方設定 -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="基本的な話し方">
+            <AutoCompleteTextView
+                android:id="@+id/speechStyleBaseInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/speechStyleDetailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="話し方の特徴（詳細）"
+                android:minLines="2"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="応答の長さ"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/responseLength"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:value="3"
+            android:valueFrom="1"
+            android:valueTo="5"
+            android:stepSize="1"/>
+
+        <TextView
+            android:id="@+id/responseLengthDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="標準的な長さ（10-15文字程度）"
+            android:layout_marginBottom="16dp"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="応答スタイル設定"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <CheckBox
+            android:id="@+id/consistentStyleCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="いつも同じことを言わないなど、一貫した性格と応答スタイルを保つ"
+            android:checked="true"/>
+
+        <CheckBox
+            android:id="@+id/empathyCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ユーザーの気持ちに寄り添った対話を心がける"
+            android:checked="true"/>
+
+        <CheckBox
+            android:id="@+id/explainCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="孤独な老人であるユーザを癒すような対話を心がける"
+            android:checked="true"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="保存"/>
+
+    </LinearLayout>
+</ScrollView>
