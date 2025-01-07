@@ -1,7 +1,7 @@
 import openai
 
 # APIキーを直接設定します
-api_key = "ここにAPIキーを貼り付ける"
+api_key = ""
 
 # APIキーが正しく取得できているか確認します
 if not api_key:

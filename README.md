@@ -18,6 +18,22 @@
 1. プロジェクトをクローン
 2. Android Studioでプロジェクトを開く
 3. 必要なSDKと依存関係をインストール
+   - JDK 17をインストールし、Android Studioで設定
+     - File > Project Structure > SDK Location でJDKの場所を確認
+     - File > Settings > Build Tools > Gradle で Gradle JDK を17に設定
+   
+   - Android SDKの設定 (Settings > Appearance & Behavior > System Settings > Android SDK)
+     - Android 13 (API Level 33) をインストール
+     - Android SDK Build-Tools 34.0.0をインストール
+   
+   - エミュレータのセットアップ
+     - Tools > Device Manager から Create Device
+     - API Level 33以上のシステムイメージを選択してインストール
+   
+   - Gradleの同期
+     - プロジェクトを開いた後、「Sync Project with Gradle Files」を実行
+     - Build Variants ウィンドウで Debug を選択
+
 4. OpenAI APIキーを設定（下記参照）
 5. アプリをビルドして実行
 
@@ -40,8 +56,7 @@
      ```
 
 4. APIキーのテスト
-   - 以下のPythonスクリプトを使用してAPIキーをテスト：
-    test_OpenAI_APIKEY_check.py
+   - 以下のPythonスクリプトを使用してAPIキーをテスト：test_OpenAI_APIKEY_check.py
 
 ## 使用方法
 
