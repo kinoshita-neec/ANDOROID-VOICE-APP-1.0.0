@@ -18,7 +18,7 @@
 1. プロジェクトをクローン
 2. Android Studioでプロジェクトを開く
 3. 必要なSDKと依存関係をインストール
-   - JDK 17をインストールし、Android Studioで設定
+   - JDK 17をインストールする
       - 1. JDK 17のダウンロード
             Oracleの公式サイト(https://www.oracle.com/java/technologies/downloads/#java17-windows)にアクセスします。
             Windows用のインストーラ（jdk-17.0.13_windows-x64_bin.exe）をダウンロードします。
@@ -39,7 +39,7 @@
             "java -version"を実行して、JDKが正しくインストールされているか確認します。
             正しくインストールされていれば、JDK 17のバージョン情報が表示されます。
            
-     AndroidStudioで、      
+   - Android StudioのGradle JDKにJDK17を設定する      
      - File > Project Structure > SDK Location でJDKの場所を確認
      - File > Settings > Build Tools > Gradle で Gradle JDK を17に設定
    
