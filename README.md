@@ -20,8 +20,8 @@
 3. 必要なSDKと依存関係をインストール
    - JDK 17をインストールし、Android Studioで設定
       - 1. JDK 17のダウンロード
-            Oracleの公式サイトにアクセスします。
-            Windows用のインストーラ（.exeファイル）をダウンロードします。
+            Oracleの公式サイト(https://www.oracle.com/java/technologies/downloads/#java17-windows)にアクセスします。
+            Windows用のインストーラ（jdk-17.0.13_windows-x64_bin.exe）をダウンロードします。
       - 2. JDK 17のインストール
             ダウンロードしたインストーラを実行します。
             インストーラの指示に従ってインストールを進めます。
@@ -36,8 +36,10 @@
             例: C:\Program Files\Java\jdk-17
       - 4. インストールの確認
             コマンドプロンプトを開きます。
-            以下のコマンドを実行して、JDKが正しくインストールされているか確認します。
+            "java -version"を実行して、JDKが正しくインストールされているか確認します。
             正しくインストールされていれば、JDK 17のバージョン情報が表示されます。
+           
+     AndroidStudioで、      
      - File > Project Structure > SDK Location でJDKの場所を確認
      - File > Settings > Build Tools > Gradle で Gradle JDK を17に設定
    
